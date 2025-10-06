@@ -4,16 +4,16 @@ A full-stack AI-powered PDF chat application with a retro Severance-inspired UI.
 
 ![Landing Page](./screenshots/landing-page.png)
 
-## ✨ Features
+## Features
 
-- 🤖 **AI-Powered Chat**: Interact with your PDF documents using DeepSeek LLM
-- 🔍 **Vector Search**: Fast semantic search powered by Supabase pgvector
-- 🎨 **Retro UI**: Severance Apple TV show inspired design with cyberpunk aesthetics
-- 📄 **PDF Processing**: Automatic text extraction and intelligent chunking
-- 💬 **Conversational Context**: Maintains conversation history for natural dialogue
-- 🗂️ **Document Management**: Upload, view, and delete your PDF documents
+- **AI-Powered Chat**: Interact with your PDF documents using DeepSeek LLM
+- **Vector Search**: Fast semantic search powered by Supabase pgvector
+- **Retro UI**: Severance Apple TV show inspired design with cyberpunk aesthetics
+- **PDF Processing**: Automatic text extraction and intelligent chunking
+- **Conversational Context**: Maintains conversation history for natural dialogue
+- **Document Management**: Upload, view, and delete your PDF documents
 
-## 🖼️ Screenshots
+## Screenshots
 
 ### Landing Page
 The main interface with upload and document management options.
@@ -35,7 +35,7 @@ Have natural conversations about your document content.
 
 ![Chat Interface](./screenshots/chat-interface.png)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
 - **Node.js + Express**: REST API server
@@ -53,7 +53,7 @@ Have natural conversations about your document content.
 - **Press Start 2P**: Retro pixel font
 - **Custom CSS**: Scanlines, pixel borders, and CRT effects
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -164,7 +164,7 @@ The application will be available at:
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:3005
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 pdfchat/
@@ -197,7 +197,7 @@ pdfchat/
 └── README.md
 ```
 
-## 🔑 API Endpoints
+## API Endpoints
 
 ### PDF Management
 - `POST /api/pdf/upload` - Upload and process a PDF
@@ -210,7 +210,7 @@ pdfchat/
 ### Health
 - `GET /health` - API health check
 
-## 🎨 Design Features
+## Design Features
 
 The UI is inspired by the Severance Apple TV show computers:
 - **Color Palette**: Deep blue-black backgrounds with cyan/light blue accents
@@ -218,14 +218,14 @@ The UI is inspired by the Severance Apple TV show computers:
 - **Effects**: CRT scanlines, pixel borders, and glow effects
 - **Layout**: Minimal, institutional aesthetic
 
-## 🔒 Security Notes
+## Security Notes
 
 - Use service role keys only in backend (never expose in frontend)
 - Keep API keys in environment variables
 - The backend uses CORS to restrict frontend origins
 - Always validate and sanitize file uploads
 
-## 📝 How It Works
+## How It Works
 
 1. **Upload**: User uploads a PDF file
 2. **Processing**: Backend extracts text and splits into chunks
@@ -235,15 +235,12 @@ The UI is inspired by the Severance Apple TV show computers:
 6. **Search**: Question is embedded and similar chunks are found via vector search
 7. **Generation**: DeepSeek LLM generates a response using relevant chunks as context
 
-## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
+## License
 
 MIT License - feel free to use this project for learning or commercial purposes.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [DeepSeek](https://www.deepseek.com/) for the LLM
 - [Supabase](https://supabase.com/) for the database and vector storage
@@ -251,11 +248,5 @@ MIT License - feel free to use this project for learning or commercial purposes.
 - [Hugging Face](https://huggingface.co/) for embeddings
 - Severance (Apple TV+) for design inspiration
 
-## 📞 Support
 
-For issues and questions, please open an issue on GitHub.
-
----
-
-Built with ❤️ using TypeScript, Next.js, and Express
 
