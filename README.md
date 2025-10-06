@@ -2,7 +2,7 @@
 
 A full-stack AI-powered PDF chat application with a retro Severance-inspired UI. Upload PDF documents and have intelligent conversations with them using RAG (Retrieval Augmented Generation).
 
-![Landing Page](https://github.com/user-attachments/assets/landing-page.png)
+![Landing Page](./screenshots/landing-page.png)
 
 ## ✨ Features
 
@@ -18,22 +18,22 @@ A full-stack AI-powered PDF chat application with a retro Severance-inspired UI.
 ### Landing Page
 The main interface with upload and document management options.
 
-![Landing Page](https://github.com/user-attachments/assets/landing-page.png)
+![Landing Page](./screenshots/landing-page.png)
 
 ### Upload PDF
 Simple drag-and-drop or click-to-upload interface.
 
-![Upload PDF](https://github.com/user-attachments/assets/upload-pdf.png)
+![Upload PDF](./screenshots/upload-pdf.png)
 
 ### Document Library
 View all your uploaded PDFs with timestamps.
 
-![My Documents](https://github.com/user-attachments/assets/my-documents.png)
+![My Documents](./screenshots/my-documents.png)
 
 ### Chat Interface
 Have natural conversations about your document content.
 
-![Chat Interface](https://github.com/user-attachments/assets/chat-interface.png)
+![Chat Interface](./screenshots/chat-interface.png)
 
 ## 🛠️ Tech Stack
 
