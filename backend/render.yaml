@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: pdf-chat-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 3005
+      - key: NODE_ENV
+        value: production
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: DEEPSEEK_API_BASE
+        value: https://api.deepseek.com/v1
+      - key: HUGGINGFACE_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+

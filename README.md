@@ -13,6 +13,19 @@ A full-stack AI-powered PDF chat application with a retro Severance-inspired UI.
 - **Conversational Context**: Maintains conversation history for natural dialogue
 - **Document Management**: Upload, view, and delete your PDF documents
 
+## Deployment
+
+Want to deploy this to production? Check out the [Deployment Guide](./DEPLOYMENT.md) for step-by-step instructions on deploying to Vercel (frontend) and Railway/Render (backend).
+
+Quick deploy:
+```bash
+# Frontend to Vercel
+cd frontend && vercel --prod
+
+# Backend to Railway
+cd backend && railway up
+```
+
 ## Screenshots
 
 ### Landing Page
