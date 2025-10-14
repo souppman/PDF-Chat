@@ -1,0 +1,138 @@
+/* Import Google Font first - @import rules must be at the top */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Import Tailwind CSS */
+@import "tailwindcss";
+
+:root {
+  --background: #0a0e1a;
+  --foreground: #89CFF0;
+  --accent: #5B9BD5;
+  --border-primary: rgba(137, 207, 240, 0.3);
+  --border-secondary: rgba(91, 155, 213, 0.2);
+  --border-hover: rgba(137, 207, 240, 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+/* Pixelated styles */
+* {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Pixel border utility */
+.pixel-border {
+  box-shadow: 
+    0 0 0 2px currentColor,
+    2px 2px 0 2px currentColor,
+    -2px -2px 0 2px currentColor,
+    2px -2px 0 2px currentColor,
+    -2px 2px 0 2px currentColor;
+}
+
+.pixel-border-sm {
+  box-shadow: 
+    0 0 0 1px currentColor,
+    1px 1px 0 1px currentColor,
+    -1px -1px 0 1px currentColor,
+    1px -1px 0 1px currentColor,
+    -1px 1px 0 1px currentColor;
+}
+
+/* Retro button effect */
+.pixel-button {
+  position: relative;
+  transition: all 0.1s;
+}
+
+.pixel-button:hover {
+  transform: translate(2px, 2px);
+}
+
+.pixel-button:active {
+  transform: translate(4px, 4px);
+}
+
+/* Animated scanlines for retro CRT effect */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    transparent 50%,
+    rgba(137, 207, 240, 0.03) 51%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Pixel glow effect */
+.pixel-glow {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #161b2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #89CFF0;
+  border: 2px solid #161b2e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A7C7E7;
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    filter: brightness(1);
+  }
+  50% { 
+    filter: brightness(1.3);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
