@@ -26,6 +26,6 @@ export interface ChatResponse {
 export interface VectorSearchResult {
   content: string;
   similarity: number;
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
 }
 

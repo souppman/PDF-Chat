@@ -5,10 +5,9 @@ import { sendChatMessage, ChatMessage } from '@/lib/api';
 
 interface ChatInterfaceProps {
   documentId: string;
-  documentName: string;
 }
 
-export default function ChatInterface({ documentId, documentName }: ChatInterfaceProps) {
+export default function ChatInterface({ documentId }: ChatInterfaceProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [loading, setLoading] = useState(false);

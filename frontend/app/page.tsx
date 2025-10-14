@@ -134,7 +134,6 @@ export default function Home() {
           <div className="flex-1">
             <ChatInterface
               documentId={selectedDocument!.id}
-              documentName={selectedDocument!.name}
             />
           </div>
         </div>
