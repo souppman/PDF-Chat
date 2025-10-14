@@ -15,16 +15,19 @@ A full-stack AI-powered PDF chat application with a retro Severance-inspired UI.
 
 ## Deployment
 
-Want to deploy this to production? Check out the [Deployment Guide](./DEPLOYMENT.md) for step-by-step instructions on deploying to Vercel (frontend) and Railway/Render (backend).
+### Deploy Both on Vercel (Recommended - FREE!)
 
-Quick deploy:
-```bash
-# Frontend to Vercel
-cd frontend && vercel --prod
+The easiest way to deploy! Both frontend AND backend on Vercel's free tier.
 
-# Backend to Railway
-cd backend && railway up
-```
+📖 **[Complete Vercel Deployment Guide](./VERCEL_DEPLOYMENT.md)**
+
+Quick steps:
+1. Deploy backend to Vercel (set root directory to `backend`)
+2. Deploy frontend to Vercel (set root directory to `frontend`)
+3. Connect them with environment variables
+4. Done! 🎉
+
+**Total Cost**: $0 on free tier!
 
 ## Screenshots
 

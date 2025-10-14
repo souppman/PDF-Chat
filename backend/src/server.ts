@@ -10,9 +10,15 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
+// Middleware - Allow both port 3000 and 3001 for local development
+const allowedOrigins: string[] = [
+  process.env.FRONTEND_URL,
+  'http://localhost:3000',
+  'http://localhost:3001'
+].filter((origin): origin is string => Boolean(origin));
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: allowedOrigins,
   credentials: true,
 }));
 
@@ -35,16 +41,19 @@ app.use((err: Error, req: express.Request, res: express.Response, next: express.
   res.status(500).json({ error: 'Internal server error' });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on http://localhost:${PORT}`);
-  console.log(`📝 API endpoints:`);
-  console.log(`   - POST   /api/pdf/upload`);
-  console.log(`   - GET    /api/pdf/documents`);
-  console.log(`   - DELETE /api/pdf/:documentId`);
-  console.log(`   - POST   /api/chat`);
-  console.log(`   - GET    /health`);
-});
+// Start server (only in non-serverless environments)
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server is running on http://localhost:${PORT}`);
+    console.log(`📝 API endpoints:`);
+    console.log(`   - POST   /api/pdf/upload`);
+    console.log(`   - GET    /api/pdf/documents`);
+    console.log(`   - DELETE /api/pdf/:documentId`);
+    console.log(`   - POST   /api/chat`);
+    console.log(`   - GET    /health`);
+  });
+}
 
+// Export for Vercel serverless
 export default app;
 
