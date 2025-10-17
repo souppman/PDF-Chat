@@ -48,7 +48,8 @@ export async function getDocuments(): Promise<Document[]> {
     throw new Error('Failed to fetch documents');
   }
 
-  return response.json();
+  const data = await response.json();
+  return data.documents || [];
 }
 
 /**
