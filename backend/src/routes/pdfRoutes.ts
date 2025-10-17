@@ -1,4 +1,5 @@
 import express from 'express';
+import multer from 'multer';
 import { randomUUID } from 'crypto';
 import { pdfService } from '../services/pdfService';
 import { vectorService } from '../services/vectorService';
@@ -7,18 +8,33 @@ import { supabase } from '../config/supabase';
 
 const router = express.Router();
 
+// Configure multer for file uploads (store in memory as buffer)
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 10 * 1024 * 1024, // 10MB limit
+  },
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype === 'application/pdf') {
+      cb(null, true);
+    } else {
+      cb(new Error('Only PDF files are allowed'));
+    }
+  },
+});
+
 /**
  * POST /api/pdf/upload
  * Upload and process a PDF file
  */
-router.post('/upload', express.raw({ type: 'application/pdf', limit: '10mb' }), async (req, res) => {
+router.post('/upload', upload.single('file'), async (req, res) => {
   try {
-    const pdfBuffer = req.body;
-    const filename = req.headers['x-filename'] as string || 'document.pdf';
-
-    if (!pdfBuffer || pdfBuffer.length === 0) {
+    if (!req.file) {
       return res.status(400).json({ error: 'No PDF file provided' });
     }
+
+    const pdfBuffer = req.file.buffer;
+    const filename = req.file.originalname || 'document.pdf';
 
     // 1. Parse PDF
     const rawText = await pdfService.parsePDF(pdfBuffer);
