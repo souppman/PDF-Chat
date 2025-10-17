@@ -41,19 +41,16 @@ app.use((err: Error, req: express.Request, res: express.Response, next: express.
   res.status(500).json({ error: 'Internal server error' });
 });
 
-// Start server (only in non-serverless environments)
-if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
-  app.listen(PORT, () => {
-    console.log(`🚀 Server is running on http://localhost:${PORT}`);
-    console.log(`📝 API endpoints:`);
-    console.log(`   - POST   /api/pdf/upload`);
-    console.log(`   - GET    /api/pdf/documents`);
-    console.log(`   - DELETE /api/pdf/:documentId`);
-    console.log(`   - POST   /api/chat`);
-    console.log(`   - GET    /health`);
-  });
-}
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`API endpoints:`);
+  console.log(`   - POST   /api/pdf/upload`);
+  console.log(`   - GET    /api/pdf/documents`);
+  console.log(`   - DELETE /api/pdf/:documentId`);
+  console.log(`   - POST   /api/chat`);
+  console.log(`   - GET    /health`);
+});
 
-// Export for Vercel serverless
 export default app;
 

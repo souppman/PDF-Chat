@@ -15,19 +15,32 @@ A full-stack AI-powered PDF chat application with a retro Severance-inspired UI.
 
 ## Deployment
 
-### Deploy Both on Vercel (Recommended - FREE!)
+### Deploy with Render (Recommended)
 
-The easiest way to deploy! Both frontend AND backend on Vercel's free tier.
+Traditional server-based deployment - best for file handling and no cold starts!
 
-📖 **[Complete Vercel Deployment Guide](./VERCEL_DEPLOYMENT.md)**
+📖 **[Complete Render Deployment Guide](./RENDER_DEPLOYMENT.md)**
+
+**Architecture:**
+- Backend: Render Web Service (Node.js server)
+- Frontend: Vercel (Next.js) or Render Static Site
+- Database: Supabase (already configured)
 
 Quick steps:
-1. Deploy backend to Vercel (set root directory to `backend`)
-2. Deploy frontend to Vercel (set root directory to `frontend`)
-3. Connect them with environment variables
+1. Deploy backend to Render as Web Service
+2. Deploy frontend to Vercel (or Render)
+3. Connect with environment variables
 4. Done! 🎉
 
 **Total Cost**: $0 on free tier!
+
+### Alternative: Vercel Serverless
+
+Want serverless? Deploy both to Vercel instead.
+
+📖 **[Vercel Deployment Guide](./VERCEL_DEPLOYMENT.md)**
+
+**Note**: Serverless can have cold starts and file handling limitations.
 
 ## Screenshots
 
